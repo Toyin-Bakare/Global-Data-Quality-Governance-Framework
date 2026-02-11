@@ -1,0 +1,13 @@
+How to run (Windows 11 + Docker Desktop + WSL recommended)
+
+From inside experimentation-metrics-framework/:
+
+make up
+make gen
+make run
+
+Or manually:
+
+docker compose up -d
+docker exec -it spark-master python /opt/app/src/etl/generate_sample_data.py
+docker exec -it spark-master spark-submit /opt/app/src/jobs/run_experiment_metrics.py --job_conf /opt/app/conf/job.yaml

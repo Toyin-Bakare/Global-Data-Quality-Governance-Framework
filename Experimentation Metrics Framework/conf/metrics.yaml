@@ -1,0 +1,25 @@
+metrics:
+  - name: plays_24h
+    description: "Count of play events within 24h after exposure"
+    type: count_events
+    event_type: play
+    window_hours: 24
+
+  - name: searches_24h
+    description: "Count of search events within 24h after exposure"
+    type: count_events
+    event_type: search
+    window_hours: 24
+
+  - name: revenue_7d
+    description: "Sum of revenue within 7 days after exposure"
+    type: sum_values
+    event_type: purchase
+    value_col: value
+    window_hours: 168
+
+  - name: retention_7d
+    description: "User active at least once in 7d (binary per user)"
+    type: user_binary_active
+    any_event: true
+    window_hours: 168

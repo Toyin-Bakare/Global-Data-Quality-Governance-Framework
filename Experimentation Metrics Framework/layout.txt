@@ -1,0 +1,24 @@
+experimentation-metrics-framework/
+  README.md
+  requirements.txt
+  docker-compose.yml
+  Makefile
+  conf/
+    metrics.yaml
+    job.yaml
+  src/
+    etl/
+      generate_sample_data.py
+    framework/
+      __init__.py
+      config.py
+      io.py
+      metrics.py
+      experiment.py
+      cuped.py
+      checks.py
+      utils.py
+    jobs/
+      run_experiment_metrics.py
+  tests/
+    test_metrics.py

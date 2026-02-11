@@ -1,0 +1,14 @@
+up:
+	docker compose up -d
+
+down:
+	docker compose down
+
+gen:
+	docker exec -it spark-master python /opt/app/src/etl/generate_sample_data.py
+
+run:
+	docker exec -it spark-master spark-submit /opt/app/src/jobs/run_experiment_metrics.py --job_conf /opt/app/conf/job.yaml
+
+logs:
+	docker logs -f spark-master
