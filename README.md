@@ -29,7 +29,7 @@ Focus: Optimize the Spark DAG and minimize data shuffling.
 
 Use Case: Contribution to Databricks/Spark infrastructure at a platform level.
 
-📁 [`Custom Spark SQL Transformer`]()
+📁 [`Custom Spark SQL Transformer`](https://github.com/Toyin-Bakare/Global-Data-Quality-Governance-Framework/tree/main/custom_spark_sql_transformer)
 
 ---
 ### 3) Automated Data Quality Monitor 
