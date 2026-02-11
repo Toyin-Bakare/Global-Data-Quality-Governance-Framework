@@ -1,4 +1,5 @@
-# Experimentation Metrics Framework (Spark + YAML Metrics)
+# Experimentation Metrics Framework 
+(Spark + YAML Metrics)
 
 A reusable experimentation metrics pipeline that standardizes:
 - exposure/assignment modeling
@@ -31,5 +32,6 @@ Exposure table: experiment_id, user_id, variant, exposure_ts
 Outcomes table: user_id, event_ts, event_type, value
 
 Metrics: defined in YAML (count, sum, rate, avg per user), with windows relative to exposure
+
 
 Spark UI: http://localhost:8080
