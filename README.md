@@ -51,7 +51,7 @@ Focus: Focus on security (IAM roles, VPC peering, and encryption at rest).
 
 Use Case: In the event you need to deploy your own project end-to-end including Infrasctructure deployment.
 
-📁 [`Infrastructure-as-Code (IaC)`]()
+📁 [`Infrastructure-as-Code (IaC)`](https://github.com/Toyin-Bakare/Global-Data-Quality-Governance-Framework/tree/main/iac_data_stack_terraform)
 
 
 
