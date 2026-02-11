@@ -1,6 +1,7 @@
-# Batch + Streaming Data Quality Framework (Great Expectations + Kafka + Spark + Airflow + Alerts)
+# Batch + Streaming Data Quality Framework 
+(Great Expectations + Kafka + Spark + Airflow + Alerts)
 
-A portfolio-ready **data quality platform** that validates **batch** and **streaming** pipelines using a unified control plane:
+A **data quality platform** that validates **batch** and **streaming** pipelines using a unified control plane:
 - **Batch DQ**: scheduled validations (Airflow) against warehouse tables or files
 - **Streaming DQ**: real-time checks on Kafka events (Spark Structured Streaming) with sliding-window metrics
 - **Shared rule registry**: DQ rules stored as YAML “contracts”
@@ -56,7 +57,7 @@ Run batch DQ:
 
 ---
 
-## Resume-ready highlights
+## Project highlights
 
 - Built a unified **batch + streaming data quality framework** with contract-driven rules reused across ETL and Kafka pipelines
 - Implemented **real-time DQ** using Spark Structured Streaming with sliding-window metrics and schema checks
