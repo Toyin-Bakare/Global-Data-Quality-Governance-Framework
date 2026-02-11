@@ -1,0 +1,42 @@
+version: "3.8"
+name: dq_monitor
+services:
+  postgres:
+    image: postgres:16
+    container_name: dq_postgres
+    environment:
+      POSTGRES_USER: dq
+      POSTGRES_PASSWORD: dq
+      POSTGRES_DB: dq
+    ports:
+      - "5432:5432"
+    volumes:
+      - dq_pgdata:/var/lib/postgresql/data
+
+  airflow:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.airflow
+    container_name: dq_airflow
+    env_file:
+      - ./airflow.env
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+
+  dashboard:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.dashboard
+    container_name: dq_dashboard
+    environment:
+      DQ_DB_URL: "postgresql://dq:dq@postgres:5432/dq"
+      DASHBOARD_PORT: "8090"
+    ports:
+      - "8090:8090"
+    depends_on:
+      - postgres
+
+volumes:
+  dq_pgdata: {}

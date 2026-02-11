@@ -1,0 +1,22 @@
+FROM apache/airflow:2.8.4-python3.11
+
+USER root
+RUN apt-get update && apt-get install -y gcc build-essential && rm -rf /var/lib/apt/lists/*
+USER airflow
+
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt && pip install --no-cache-dir great_expectations==0.18.12
+
+COPY dq_monitor /opt/dq_monitor/dq_monitor
+COPY data /opt/dq_monitor/data
+COPY airflow /opt/airflow
+COPY great_expectations /opt/great_expectations
+
+ENV PYTHONPATH=/opt/dq_monitor:/opt/airflow
+
+COPY infra/entrypoint.sh /entrypoint.sh
+USER root
+RUN chmod +x /entrypoint.sh
+USER airflow
+
+ENTRYPOINT ["/entrypoint.sh"]
