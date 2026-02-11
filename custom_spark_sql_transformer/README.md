@@ -1,6 +1,7 @@
-# Custom Spark SQL Transformer (Config-Driven ETL with Templated SQL + UDFs + Data Quality Checks)
+# Custom Spark SQL Transformer 
+(Config-Driven ETL with Templated SQL + UDFs + Data Quality Checks)
 
-A portfolio-ready project that implements a **config-driven Spark SQL transformation engine**.
+A project that implements a **config-driven Spark SQL transformation engine**.
 It lets teams ship transformations as **SQL files + a YAML job spec**, without writing new Spark code per pipeline.
 
 It supports:
@@ -99,7 +100,7 @@ python tools/inspect_parquet.py --path examples/output/customer_revenue
 
 ---
 
-## Resume-ready highlights
+## Project highlights
 - Built a **config-driven Spark SQL transformation engine** (YAML + SQL) to eliminate per-pipeline boilerplate
 - Added **templated SQL** with macros/variables for portability across environments
 - Implemented **data quality gates** (null checks, uniqueness, row-count thresholds) with structured reports
