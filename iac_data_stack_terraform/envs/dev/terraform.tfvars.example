@@ -1,0 +1,6 @@
+name_prefix = "toyin-dev-data-stack"
+tags = {
+  project = "iac-data-stack"
+  env     = "dev"
+  owner   = "toyin"
+}

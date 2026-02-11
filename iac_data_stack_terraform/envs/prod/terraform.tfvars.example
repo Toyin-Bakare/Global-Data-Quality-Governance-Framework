@@ -1,0 +1,2 @@
+name_prefix = "toyin-prod-data-stack"
+tags = { project = "iac-data-stack", env = "prod", owner = "toyin" }
