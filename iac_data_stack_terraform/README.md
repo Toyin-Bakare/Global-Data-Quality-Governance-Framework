@@ -1,6 +1,7 @@
-# Infrastructure-as-Code (IaC) for a Data Stack (Terraform) — AWS Reference Architecture
+# Infrastructure-as-Code (IaC) 
+Data Stack (Terraform) — AWS Reference Architecture
 
-This repo is a **portfolio-grade Terraform implementation** of a modern “data stack” baseline on AWS.
+This repo is a **Terraform implementation** of a modern “data stack” baseline on AWS.
 
 It provisions:
 - **Networking:** VPC, public/private subnets, NAT, route tables, security groups
@@ -75,7 +76,7 @@ terraform apply
 
 ---
 
-## Resume-ready highlights
+## Project highlights
 
 - Built reusable Terraform modules for an AWS data platform baseline (VPC, S3, ECS, RDS)
 - Enforced secure defaults: private RDS, blocked public S3 access, encryption at rest, lifecycle policies
