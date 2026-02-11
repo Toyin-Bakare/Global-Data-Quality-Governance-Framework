@@ -3,7 +3,7 @@
 An end-to-end framework for enforcing Data Quality (DQ) gates across hybrid batch/streaming environments. Shifting data management from reactive fixing to proactive, IaC-driven governance
 
 
-### 1) Experimentation Metrics Framework
+### 1. Experimentation Metrics Framework
 **Tech:** Spark, SQL, Python  
 Reusable metrics pipeline for A/B testing with standardized exposure/outcome modeling and metric definitions.
 
@@ -12,7 +12,7 @@ Reusable metrics pipeline for A/B testing with standardized exposure/outcome mod
 
 ---
 
-### 3) Batch + Streaming Data Quality Framework
+### 2. Batch + Streaming Data Quality Framework
 **Tech:** Great Expectations / custom checks, Spark, SQL  
 Automated data audits, anomaly detection, and freshness checks for large-scale datasets.
 
@@ -21,7 +21,7 @@ Automated data audits, anomaly detection, and freshness checks for large-scale d
 ---
 
 
-### 2) Custom Spark SQL Transformer 
+### 3. Custom Spark SQL Transformer 
 **Tech:** Spark & Scala/Java  
 A custom Spark library that performs a complex, non-standard data transformation (like PII masking or advanced currency conversion with historical lookups).
 
@@ -32,7 +32,7 @@ Use Case: Contribution to Databricks/Spark infrastructure at a platform level.
 📁 [`Custom Spark SQL Transformer`](https://github.com/Toyin-Bakare/Global-Data-Quality-Governance-Framework/tree/main/custom_spark_sql_transformer)
 
 ---
-### 3) Automated Data Quality Monitor 
+### 4. Automated Data Quality Monitor 
 **Tech:** Python & Snowflake/SQL  
 Tool that runs scheduled "sanity checks" on a dataset (e.g., checking for nulls, outliers, or schema drift) and sends alerts to Slack/PagerDuty.
 
@@ -44,7 +44,7 @@ Use Case: For Data Science and Risk teams who rely on clean, reliable data.
 
 ---
 
-### 4)Infrastructure-as-Code (IaC) for a Data Stack (Terraform) 
+### 5. Infrastructure-as-Code (IaC) for a Data Stack (Terraform) 
 A repository that spins up an entire "Block-like" stack: a VPC, a Kafka cluster (via Confluent or Managed), and a Kubernetes cluster.
 
 Focus: Focus on security (IAM roles, VPC peering, and encryption at rest).
