@@ -1,0 +1,21 @@
+name: orders_contract
+entity: orders
+rules:
+  - id: order_id_not_null
+    type: not_null
+    field: order_id
+    severity: high
+  - id: customer_id_not_null
+    type: not_null
+    field: customer_id
+    severity: medium
+  - id: amount_in_range
+    type: range
+    field: amount_cents
+    severity: high
+    params: { min: 0, max: 500000 }
+  - id: currency_allowed
+    type: allowed_values
+    field: currency
+    severity: low
+    params: { allowed: ["USD","NGN","GBP"] }

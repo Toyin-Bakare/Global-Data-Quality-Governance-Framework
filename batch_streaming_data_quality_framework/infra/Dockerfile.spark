@@ -1,0 +1,13 @@
+FROM bitnami/spark:3.5.1
+USER root
+RUN apt-get update && apt-get install -y python3-pip && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/app
+COPY requirements.txt /opt/app/requirements.txt
+RUN pip3 install --no-cache-dir -r /opt/app/requirements.txt pyspark==3.5.1
+COPY dq_core /opt/app/dq_core
+COPY streaming /opt/app/streaming
+COPY contracts /opt/app/contracts
+COPY infra/entrypoint_spark.sh /entrypoint_spark.sh
+RUN chmod +x /entrypoint_spark.sh
+ENV PYTHONPATH=/opt/app
+ENTRYPOINT ["/entrypoint_spark.sh"]

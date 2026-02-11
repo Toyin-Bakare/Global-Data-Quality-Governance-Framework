@@ -1,0 +1,21 @@
+FROM apache/airflow:2.8.4-python3.11
+USER airflow
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+COPY dq_core /opt/app/dq_core
+COPY batch /opt/app/batch
+COPY streaming /opt/app/streaming
+COPY dashboard /opt/app/dashboard
+COPY contracts /opt/app/contracts
+COPY airflow /opt/airflow
+COPY infra/entrypoint_airflow.sh /entrypoint_airflow.sh
+
+RUN mkdir -p /opt/great_expectations/expectations /opt/great_expectations/checkpoints /opt/great_expectations/uncommitted/validations
+ENV PYTHONPATH=/opt/app:/opt/airflow
+ENV GE_ROOT_DIR=/opt/great_expectations
+
+USER root
+RUN chmod +x /entrypoint_airflow.sh
+USER airflow
+ENTRYPOINT ["/entrypoint_airflow.sh"]
