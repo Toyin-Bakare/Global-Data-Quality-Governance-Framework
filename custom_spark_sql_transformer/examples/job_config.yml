@@ -1,0 +1,47 @@
+job_name: customer_revenue_job
+
+inputs:
+  - name: customers_raw
+    path: examples/data/customers.csv
+    format: csv
+    options:
+      header: "true"
+      inferSchema: "true"
+
+  - name: orders_raw
+    path: examples/data/orders.csv
+    format: csv
+    options:
+      header: "true"
+      inferSchema: "true"
+
+sql_steps:
+  - name: clean_customers
+    sql_file: examples/sql/01_customers_clean.sql
+    create_view: customers_clean
+
+  - name: customer_revenue
+    sql_file: examples/sql/02_customer_revenue.sql
+    create_view: customer_revenue
+
+output:
+  view: customer_revenue
+  path: examples/output/customer_revenue
+  format: parquet
+  mode: overwrite
+  partition_by: ["country"]
+
+dq_rules:
+  - type: not_null
+    view: customers_clean
+    columns: ["customer_id", "email"]
+
+  - type: unique
+    view: customers_clean
+    columns: ["customer_id"]
+
+  - type: row_count
+    view: customer_revenue
+    min: 1
+
+add_audit_columns: true
