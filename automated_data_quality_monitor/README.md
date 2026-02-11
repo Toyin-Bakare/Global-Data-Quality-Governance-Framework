@@ -1,6 +1,7 @@
-# Automated Data Quality Monitor (Great Expectations + Airflow + Slack Alerts + Trend Dashboard)
+# Automated Data Quality Monitor 
+(Great Expectations + Airflow + Slack Alerts + Trend Dashboard)
 
-A portfolio-ready **Automated Data Quality Monitor** that continuously validates datasets, detects regressions,
+An **Automated Data Quality Monitor** that continuously validates datasets, detects regressions,
 and notifies teams when data quality breaks.
 
 This project demonstrates:
@@ -93,7 +94,7 @@ Set in `infra/airflow.env`:
 
 ---
 
-## Resume-ready highlights
+## Project highlights
 - Built an automated data quality monitoring system using Great Expectations + Airflow + Postgres
 - Implemented actionable Slack alerts with failed expectations and dashboard deep-links
 - Persisted validation results for historical trending and regression detection
